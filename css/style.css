@@ -43,4 +43,13 @@ input:focus{
     font-style: italic;
     font-weight: 600;
 }
+#messages > div{
+    border-radius: 10px;
+    background-color: #EFEFEF;
+    margin: 10px 0px 10px 0px; 
+    padding: 10px;
+}
 
+#messages{
+    margin: 15px 0px 10px 0px; 
+}
