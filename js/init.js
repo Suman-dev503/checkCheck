@@ -51,3 +51,15 @@ document.querySelector('#message-form').addEventListener('submit', e => {
 		console.error(`Error adding document: ${error}`);
 	});
 })
+db.collection('messages')
+.onSnapshot(snapshot => {
+	document.querySelector('#messages').innerHTML = ''
+	snapshot.forEach(doc => {
+		let message = document.createElement('div')
+		message.innerHTML = `
+		<p class="name">${doc.data().name}</p>
+		<p>${doc.data().message}</p>
+		`
+		document.querySelector('#messages').prepend(message)
+	})
+})
